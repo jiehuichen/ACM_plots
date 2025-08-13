@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>PDF Plots</title>
+<title>Searchable Gene Plots</title>
+<meta charset="utf-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
 <style>
 body { font-family: sans-serif; padding: 20px; }
+.search { margin-bottom: 20px; width: 300px; padding: 8px; font-size: 16px; }
 .grid { display: flex; flex-wrap: wrap; gap: 15px; }
 .item { width: 250px; }
 iframe { width: 250px; height: 250px; border: 1px solid #ccc; }
+.gene { font-weight: bold; display: block; margin-bottom: 5px; }
 </style>
 </head>
 <body>
-<h1>PDF Plots</h1>
-<div class="grid">
 
-<div class="item">
-    <iframe src="plots/Acvr1_KO1.pdf"></iframe>
-    <p><a href="plots/Acvr1_KO1.pdf" download>Download</a></p>
+<h1>Search PDF Plots by Gene Name</h1>
+
+<div id="plot-list">
+  <input class="search" placeholder="Type gene name or condition..."/>
+  <div class="grid list">
+
+    <div class="item">
+        <span class="gene">Acvr1_KO1</span>
+        <iframe src="plots/Acvr1_KO1.pdf"></iframe>
+        <p><a href="plots/Acvr1_KO1.pdf" download>Download</a></p>
+    </div>
+
+    <div class="item">
+        <span class="gene">Acvr1_WT1</span>
+        <iframe src="plots/Acvr1_WT1.pdf"></iframe>
+        <p><a href="plots/Acvr1_WT1.pdf" download>Download</a></p>
+    </div>
+
+  </div>
 </div>
 
-<div class="item">
-    <iframe src="plots/Acvr1_WT1.pdf"></iframe>
-    <p><a href="plots/Acvr1_WT1.pdf" download>Download</a></p>
-</div>
+<script>
+  var options = { valueNames: ['gene'] };
+  var plotList = new List('plot-list', options);
+</script>
 
-</div>
 </body>
 </html>
