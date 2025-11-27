@@ -21,7 +21,7 @@ The website allows users to quickly search for a gene of interest and view corre
 1. Open the viewer:  
    **https://jiehuichen.github.io/ACM_plots/**
 
-2. Type a gene name (e.g., `Acvr1`, `Nlrp3`, `Cdh11`) in the search box.
+2. Type a gene name (e.g., `Dsp`, `Tgfb3`) in the search box.
 
 3. The viewer will display:
    - A large PDF preview of each matching plot  
